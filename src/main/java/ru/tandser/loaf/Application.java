@@ -11,11 +11,9 @@ public class Application {
     public static void main(String[] args) throws Exception {
         Core core = new Core("jdbc:postgresql://localhost:5432/postgres", "postgres", "postgres");
         InputStream stylesheet = Application.class.getResourceAsStream("/articles.xsl");
-        long start = System.currentTimeMillis();
         core.retrieve(FILE_1);
         core.convert(stylesheet, FILE_1, FILE_2);
         core.fromXmlToCvs(FILE_2, FILE_3);
         core.dispose();
-        System.out.println((System.currentTimeMillis() - start) + " ms");
     }
 }

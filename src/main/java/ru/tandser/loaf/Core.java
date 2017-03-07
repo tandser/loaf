@@ -22,7 +22,7 @@ import java.sql.Statement;
 
 public class Core implements Serializable {
 
-    public static final String SELECT = "SELECT id_art, name, code, username, guid FROM article LIMIT ALL";
+    public static final String SELECT = "SELECT id_art, name, code, username, guid FROM article LIMIT 9999";
 
     @Getter @Setter private String url;
     @Getter @Setter private String username;
